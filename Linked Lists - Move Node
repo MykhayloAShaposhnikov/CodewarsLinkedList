@@ -1,0 +1,17 @@
+class Node(object):
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+    
+class Context(object):
+    def __init__(self, source, dest):
+        self.source = source
+        self.dest = dest
+    
+def move_node(source, dest):
+    first = source.data
+    res = Node(first)
+    res.next = dest
+    dest = res
+    source = source.next
+    return Context(source, dest)

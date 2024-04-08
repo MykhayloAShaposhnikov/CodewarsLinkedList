@@ -1,0 +1,12 @@
+def linked_list_from_string(s):
+    lst = []
+    for i in s.split('->'):
+        i = i.strip()
+        if i != 'None':
+            lst.append(Node(int(i), None))
+    lst.reverse()
+    prev = None
+    for i, cur in enumerate(lst):
+        lst[i].next = prev
+        prev = cur
+    return None if s == 'None' else lst[-1]

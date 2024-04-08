@@ -1,0 +1,21 @@
+from preloaded import Node
+
+# class Node(object):
+#     """Node class for reference"""
+#     def __init__(self, data, next=None):
+#         self.data = data
+#         self.next = next
+    
+def get_nth(node, index):
+    i = index
+    length = 0
+    while node is not None:
+        if index == 0:
+            return node
+
+        node = node.next
+        length += 1
+        index -= 1
+    if i < 0 or node is None or i > length-1:
+            raise ValueError
+  

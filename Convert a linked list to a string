@@ -1,0 +1,12 @@
+def stringify(node):
+    if node is None:
+        return 'None'
+    else:
+        res = ''
+        while node is not None:
+            if node.next is not None:
+                res += str(node.data) + " -> "
+            else:
+                res += str(node.data)
+            node = node.next
+        return res + ' -> None'
